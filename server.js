@@ -21,7 +21,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://minicarengo.onrender.com" // frontend URL after deploy
+      "https://minicarengo.onrender.com",
+      "https://minicarengo-1.onrender.com" // frontend URL after deploy
     ],
     credentials: true
   })
