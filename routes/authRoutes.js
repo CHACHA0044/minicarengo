@@ -4,6 +4,19 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/authUser");
 const auth = require("../middleware/auth");
 
+/* ================= PING ================= */
+router.get("/ping", (req, res) => {
+  const random = Math.floor(Math.random() * 1000) + 1;
+  const calc = Math.sqrt(random * 73).toFixed(2);
+
+  res.json({
+    alive: true,
+    randomNumber: random,
+    calculation: calc,
+    time: new Date().toISOString()
+  });
+});
+
 /* ================= REGISTER ================= */
 router.post("/register", async (req, res) => {
   try {
