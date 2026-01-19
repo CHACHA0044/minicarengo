@@ -46,7 +46,7 @@ app.use(
 connectDB();
 
 /* ---------------- Routes ---------------- */
-app.options("/*", cors());
+
 app.get("/", (req, res) => {
   res.send("Backend running successfully 🚀");
 });
