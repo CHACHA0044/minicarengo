@@ -483,10 +483,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Focus: Backend Development & System Design
 
 **Contact:**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
+- GitHub: [@yourusername](https://github.com/CHACHA0044)
+- LinkedIn: [Your Name](www.linkedin.com/in/pranav-dembla-3a1431291)
+- Email: pdembla@student.iul.ac.in
 ---
 
 ## 🙏 Acknowledgments
