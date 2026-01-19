@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { API_URL } from "@/utils/api";
 
 export default function Role() {
   const router = useRouter();
@@ -9,7 +10,7 @@ export default function Role() {
 
   /* FETCH LOGGED USER */
   useEffect(() => {
-    fetch("http://localhost:5000/api/auth/me", {
+    fetch(`${API_URL}/api/auth/me`, {
       credentials: "include"
     })
       .then(res => res.json())
@@ -29,7 +30,7 @@ export default function Role() {
   /* LOGOUT */
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:5000/api/auth/logout", {
+      fetch(`${API_URL}/api/auth/me`, {
         method: "POST",
         credentials: "include"
       });

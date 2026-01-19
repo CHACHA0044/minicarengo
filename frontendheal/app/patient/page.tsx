@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+import { API_URL } from "@/utils/api";
 
 export default function Patient() {
 
@@ -26,7 +27,7 @@ export default function Patient() {
 
   /* FETCH LOGGED USER */
   useEffect(() => {
-    fetch("http://localhost:5000/api/auth/me", {
+    fetch(`${API_URL}/api/auth/me`, {
       credentials: "include"
     })
       .then(res => res.json())
@@ -45,7 +46,7 @@ export default function Patient() {
 
     try {
 
-      await fetch("http://localhost:5000/api/users/submit", {
+      await fetch(`${API_URL}/api/users/submit`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -58,7 +59,7 @@ export default function Patient() {
       });
 
       const aiRes = await fetch(
-        "http://localhost:5000/api/ai/summarize",
+        `${API_URL}/api/ai/summarize`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -110,7 +111,7 @@ export default function Patient() {
       await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
 
       const res = await fetch(
-        "http://localhost:5000/api/ai/chat",
+        `${API_URL}/api/ai/chat`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

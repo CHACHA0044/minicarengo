@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { API_URL } from "@/utils/api";
 
 export default function Doctor() {
   const router = useRouter();
@@ -10,7 +11,7 @@ export default function Doctor() {
   const [selectedPatient, setSelectedPatient] = useState<any>(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/auth/me", {
+    fetch(`${API_URL}/api/auth/me`, {
       credentials: "include"
     })
       .then(res => res.json())
@@ -25,7 +26,7 @@ export default function Doctor() {
 
   const fetchPatients = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/users/patients", {
+      const res = await fetch(`${API_URL}/api/users/patients`, {
         credentials: "include"
       });
       const data = await res.json();
@@ -41,7 +42,7 @@ export default function Doctor() {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:5000/api/auth/logout", {
+      await fetch(`${API_URL}/api/auth/logout`, {
         method: "POST",
         credentials: "include"
       });

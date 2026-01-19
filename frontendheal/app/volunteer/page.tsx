@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { API_URL } from "@/utils/api";
 
 export default function Volunteer() {
 
@@ -20,7 +21,7 @@ export default function Volunteer() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/auth/me", {
+   fetch(`${API_URL}/api/auth/me`, {
       credentials: "include"
     })
       .then(res => res.json())
@@ -57,7 +58,7 @@ export default function Volunteer() {
         phone
       };
 
-      const res = await fetch("http://localhost:5000/api/users/submit", {
+      const res = await fetch(`${API_URL}/api/users/submit`, {
         method: "POST",
         credentials: "include",
         headers: {

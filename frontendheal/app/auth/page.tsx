@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { API_URL } from "@/utils/api";
 
 export default function Auth() {
   const router = useRouter();
@@ -31,8 +32,8 @@ export default function Auth() {
 
     try {
       const endpoint = isLogin ? "/api/auth/login" : "/api/auth/register";
-      
-      const res = await fetch(`http://localhost:5000${endpoint}`, {
+        
+    const res = await fetch(`${API_URL}${endpoint}`, {
         method: "POST",
         credentials: "include",
         headers: {

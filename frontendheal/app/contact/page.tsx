@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { API_URL } from "@/utils/api";
 
 export default function Contact() {
   const [user, setUser] = useState<any>(null);
@@ -9,7 +10,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/auth/me", {
+    fetch(`${API_URL}/api/auth/me`, {
       credentials: "include"
     })
       .then(res => res.json())
