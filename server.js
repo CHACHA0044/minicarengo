@@ -26,22 +26,27 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // allow server-to-server
+      // allow server-to-server / postman
+      if (!origin) return callback(null, true);
+
       if (allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
+
 
 /* ---------------- Database ---------------- */
 connectDB();
 
 /* ---------------- Routes ---------------- */
-
+app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("Backend running successfully 🚀");
 });

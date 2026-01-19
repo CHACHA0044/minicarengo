@@ -55,12 +55,20 @@ router.post("/register", async (req, res) => {
     );
 
     // Set cookie
-    res.cookie("token", token, {
-    httpOnly: true,
-    sameSite: "none",
-    secure: true,   // REQUIRED on HTTPS
-    maxAge: 7 * 24 * 60 * 60 * 1000
-  });
+   const isProd = process.env.NODE_ENV === "production";
+
+res.cookie("token", token, {
+  httpOnly: true,
+
+  // Cross-site cookies only needed in production (Vercel ↔ Render)
+  sameSite: isProd ? "none" : "lax",
+
+  // HTTPS required only in prod
+  secure: isProd,
+
+  maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+});
+
 
     res.status(201).json({
       success: true,
@@ -115,12 +123,20 @@ router.post("/login", async (req, res) => {
     );
 
     // Set cookie
-    res.cookie("token", token, {
-      httpOnly: true,
-      sameSite: "none",
-      secure: true,   // REQUIRED on HTTPS
-      maxAge: 7 * 24 * 60 * 60 * 1000
-    });
+    const isProd = process.env.NODE_ENV === "production";
+
+res.cookie("token", token, {
+  httpOnly: true,
+
+  // Cross-site cookies only needed in production (Vercel ↔ Render)
+  sameSite: isProd ? "none" : "lax",
+
+  // HTTPS required only in prod
+  secure: isProd,
+
+  maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+});
+
 
    res.json({
     success: true,
