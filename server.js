@@ -17,13 +17,22 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://minicarengo.vercel.app",
+  "https://minicarengo.onrender.com"
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://minicarengo.onrender.com",
-      "https://minicarengo-1.onrender.com" // frontend URL after deploy
-    ],
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow server-to-server
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true
   })
 );

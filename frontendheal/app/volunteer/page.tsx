@@ -214,7 +214,7 @@ export default function Volunteer() {
               </div>
               <input
                 placeholder="Enter your phone number"
-                className="border-2 border-gray-200 pl-12 p-3 w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                className="border-2 text-black border-gray-200 pl-12 p-3 w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
                 type="tel"

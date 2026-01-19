@@ -112,7 +112,7 @@ export default function Auth() {
                 <input
                   type="text"
                   placeholder="Enter your full name"
-                  className="border-2 border-gray-200 pl-12 p-3 w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                  className="border-2 border-gray-200 pl-12 p-3 text-black w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   onKeyPress={handleKeyPress}
@@ -134,7 +134,7 @@ export default function Auth() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="border-2 border-gray-200 pl-12 p-3 w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                className="border-2 text-black border-gray-200 pl-12 p-3 w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 onKeyPress={handleKeyPress}
@@ -155,7 +155,7 @@ export default function Auth() {
               <input
                 type="password"
                 placeholder="Enter your password"
-                className="border-2 border-gray-200 pl-12 p-3 w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
+                className="border-2 text-black border-gray-200 pl-12 p-3 w-full rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300"
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 onKeyPress={handleKeyPress}
