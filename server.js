@@ -71,18 +71,18 @@ app.use("/api/ai", aiRoutes);
 /* ---------------- CRON JOB ---------------- */
 
 // runs every 2 minutes
-cron.schedule("*/2 * * * *", async () => {
-  try {
-    const url = process.env.RENDER_URL || "http://localhost:5000";
+// cron.schedule("*/2 * * * *", async () => {
+//   try {
+//     const url = process.env.RENDER_URL || "http://localhost:5000";
 
-    const res = await fetch(`${url}/ping`);
-    const data = await res.json();
+//     const res = await fetch(`${url}/ping`);
+//     const data = await res.json();
 
-    console.log("⏰ Self ping:", data.calculation);
-  } catch (err) {
-    console.log("Ping failed:", err.message);
-  }
-});
+//     console.log("⏰ Self ping:", data.calculation);
+//   } catch (err) {
+//     console.log("Ping failed:", err.message);
+//   }
+// });
 
 /* ---------------- Server ---------------- */
 
