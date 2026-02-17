@@ -4,6 +4,11 @@
 
 MiniCare NGO is a comprehensive healthcare support web application built to connect patients, volunteers, and healthcare professionals. This project demonstrates modern web development practices, authentication flows, role-based access control, and AI-powered automation.
 
+## 🔗 Live Deployment
+
+### 🌐 Frontend (Vercel)
+**URL:** [https://minicarengo.vercel.app](https://minicarengo.vercel.app)
+
 > ⚠️ **Disclaimer:**  
 > This is a **concept-level prototype** built for learning and demonstration purposes. It is not intended for production use without further security hardening and compliance measures.
 
@@ -138,11 +143,6 @@ flowchart LR
   - Multi-language support (planned)
 
 ---
-
-## 🔗 Live Deployment
-
-### 🌐 Frontend (Vercel)
-**URL:** [https://minicarengo.vercel.app](https://minicarengo.vercel.app)
 
 **Pages:**
 - `/` - Home page
